@@ -652,6 +652,7 @@ input[type=checkbox]:focus-visible{outline:2px solid var(--ink);outline-offset:2
 <script src="vendor/opentype.min.js"></script>
 <script src="vendor/jszip.min.js"></script>
 <script src="demo-runtime.js"></script>
+<script>window.PAPER_W_OVERRIDE=370; window.PAPER_MAX_OVERRIDE=400;</script>
 <script>
 const $ = id => document.getElementById(id);
 const state = { letters: [], loaded:false, child:{}, desc:true, canWrite:false, writer:false, reader:location.hash==="#read", editing:null, photos:[], pending:[], confirmId:null, expanded:new Set(), scene:"box", openId:null };
@@ -1254,7 +1255,8 @@ function envelope(L){
 
 // the card inside each envelope is the real letter page, laid out at the full page's width and scaled down
 const MINI={W:360};
-const PAPER_W=440;
+const PAPER_W=window.PAPER_W_OVERRIDE||440, PAPER_MAX=window.PAPER_MAX_OVERRIDE||560;
+document.documentElement.style.setProperty("--paper-w",PAPER_W+"px");
 function sizeMini(){
   const sheetW=PAPER_W;
   const stackW=$("stack").clientWidth||Math.min(560, document.documentElement.clientWidth-32);
@@ -1784,7 +1786,7 @@ function layoutSticker(node,st,s,Wfix){
   node.style.setProperty("--rot",(st.r||0)+"deg");
 }
 // the paper is always laid out 440px wide and scaled to the screen, so text wraps the same everywhere
-function paperScale(){ const ov=$("sceneLetter"); const avail=Math.min((ov.clientWidth||innerWidth)-28,560); return Math.max(.5,avail/PAPER_W); }
+function paperScale(){ const ov=$("sceneLetter"); const avail=Math.min((ov.clientWidth||innerWidth)-28,PAPER_MAX); return Math.max(.5,avail/PAPER_W); }
 function fitPaper(){
   const S=paperScale(), s=$("sheet"), z=$("sheetZoom"), f=$("sheetFit");
   s.style.setProperty("--sheet-min",Math.max(300,(innerHeight-92)/S)+"px");
