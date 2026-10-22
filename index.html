@@ -670,6 +670,7 @@ input[type=checkbox]:focus-visible{outline:2px solid var(--ink);outline-offset:2
 <script src="vendor/opentype.min.js"></script>
 <script src="vendor/jszip.min.js"></script>
 <script src="demo-runtime.js"></script>
+<script>window.SNAP_TO_LINES=true;</script>
 <script>
 const $ = id => document.getElementById(id);
 const state = { letters: [], loaded:false, child:{}, desc:true, canWrite:false, writer:false, reader:location.hash==="#read", editing:null, photos:[], pending:[], confirmId:null, expanded:new Set(), scene:"box", openId:null };
@@ -1489,10 +1490,19 @@ function buildSheet(s,L,mini){
   if(sign) s.appendChild(el("div","sig",sign));
   renderDoodles(s,L,mini&&mini.W);
   renderStickers(s,L,mini&&mini.W);
+  if(window.SNAP_TO_LINES) requestAnimationFrame(()=>snapToLines(s));
+}
+// line the writing up with the ruled lines: each line of text sits in one ruled band
+function snapToLines(s){
+  const t=s.querySelector(".hand-text"); if(!t||!s.isConnected) return;
+  const lh=parseFloat(getComputedStyle(t).lineHeight)||30, off=parseFloat(getComputedStyle(s).getPropertyValue("--rule-off"))||14;
+  const fit=el=>{ el.style.paddingTop="0px"; const n=((off-el.offsetTop)%lh+lh)%lh; el.style.paddingTop=n.toFixed(2)+"px"; };
+  fit(t); const g=s.querySelector(".sig"); if(g){ g.style.marginTop="0px"; g.style.lineHeight=lh+"px"; fit(g); if(parseFloat(g.style.paddingTop)<lh*.5) g.style.paddingTop=(parseFloat(g.style.paddingTop)+lh)+"px"; }
 }
 function renderLetter(){
   const L=findLetter(state.openId); if(!L){ closeLetter(); return; }
   const s=$("sheet"); buildSheet(s,L,null); fitPaper();
+  if(window.SNAP_TO_LINES&&document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>{ snapToLines(s); fitPaper(); });
   $("photoStack").replaceChildren();
   const list=sortedView(lettersForView()), i=list.findIndex(x=>x.id===L.id);
   $("prevBtn").disabled=i<=0; $("nextBtn").disabled=i<0||i>=list.length-1;
