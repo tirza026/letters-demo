@@ -12,15 +12,15 @@
     "letters/w3": { date: "2021-09-03", createdAt: 3, title: "the day you walked", env: "mint", stamp: { design: 15 }, photos: ["park.svg"],
       body: "Dear Leo,\n\nFour wobbly steps across the grass in the park, then you sat down hard and looked at me like you'd just discovered a secret.\n\nYou didn't stop walking for the rest of the afternoon." },
     "letters/w4": { date: "2023-05-12", createdAt: 4, title: "three candles", env: "bday", stamp: { design: 19, frame: "#e88aa8" }, photos: ["cake.svg", "balloons.svg"],
-      stickers: [{ key: "star", x: .86, y: .74, w: .13, r: 14 }],
+      stickers: [{ key: "s2", x: .86, y: .74, w: .13, r: 14 }],
       body: "Dear Leo,\n\nYou asked for a blue cake with \"lots of candles\". When we sang, you blew so hard you missed every one of them, then clapped for yourself anyway.\n\nHappy third birthday, my favourite person." },
     "letters/w5": { date: "2024-02-10", createdAt: 5, title: "your first ang bao", env: "cny", stamp: { design: 23, frame: "#c8423b" }, photos: ["lanterns.svg"],
       body: "Dear Leo,\n\nYou said \"gong xi fa cai\" to every single auntie at the reunion dinner and collected nine red packets. You put them all under your pillow \"so they can sleep too\"." },
     "letters/w6": { date: "2025-01-06", createdAt: 6, title: "first day of school", env: "airmail", stamp: { design: 14, frame: "#2f55a8" }, photos: ["schoolbag.svg"], sign: "love, mama & papa",
       body: "Dear Leo,\n\nYour new bag was nearly as big as you. You held my hand all the way to the gate, then let go without looking back.\n\nI cried in the car. Happy tears, mostly." },
     "letters/w7": { date: "2026-07-20", createdAt: 7, title: "you learned to swim", env: "blue", stamp: { design: 2, frame: "#2f8f8f" }, photos: ["beach1.svg", "beach2.svg", "beach3.svg"],
-      stickers: [{ key: "sun", x: .9, y: .98, w: .14, r: -10 }],
-      doodles: [{ c: "#d8553f", w: .008, p: [[.57,1.18],[.55,1.155],[.565,1.135],[.59,1.14],[.605,1.155],[.62,1.14],[.645,1.135],[.66,1.155],[.64,1.18],[.605,1.21],[.57,1.18]] }],
+      stickers: [{ key: "s8", x: .84, y: .47, w: .13, r: -10 }],
+      doodles: [{ c: "#d8553f", w: .009, p: [[0.165,0.71],[0.145,0.685],[0.16,0.665],[0.185,0.67],[0.2,0.685],[0.215,0.67],[0.24,0.665],[0.255,0.685],[0.235,0.71],[0.2,0.74],[0.165,0.71]] }],
       body: "Dear Leo,\n\nYou kicked so hard the whole pool got splashed, came up laughing with water up your nose, and shouted \"again!\"\n\nThen we built a sandcastle and the waves took it. You said the sea must have wanted a house too.\n\nI hope you always jump in like that." }
   };
 
