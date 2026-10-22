@@ -2,23 +2,23 @@
 // Sample letters load on first visit; anything a visitor adds stays in their own browser.
 // "Reset demo" puts the sample letters back.
 (function () {
-  const KEY = "letters-demo-db-v1", MEDIA = "letters-demo-media-";
+  const KEY = "letters-demo-db-v2", MEDIA = "letters-demo-media-";
   const SEED = {
     "meta/child": { name: "Leo", gender: "boy", birth: "2020-05-12", sign: "love, mama" },
-    "letters/w1": { date: "2020-05-20", createdAt: 1, title: "welcome, little one", env: "cream", stamp: { design: 4 }, photos: ["feet.svg"],
+    "letters/w1": { date: "2020-05-20", createdAt: 1, title: "welcome, little one", env: "cream", stamp: { design: 4 }, photos: ["newborn2.webp", "newborn.webp"],
       body: "Dear Leo,\n\nYou are eight days old and you already sneeze like your grandpa. You fall asleep with one hand on my collarbone, as if you're checking I'm still here.\n\nI am. I always will be." },
-    "letters/w2": { date: "2020-12-24", createdAt: 2, title: "your first christmas", env: "xmas", stamp: { design: 3, frame: "#c8423b" }, photos: ["tree.svg", "snow.svg"],
+    "letters/w2": { date: "2020-12-24", createdAt: 2, title: "your first christmas", env: "xmas", stamp: { design: 3, frame: "#c8423b" }, photos: ["christmas.webp", "christmas2.webp"],
       body: "Dear Leo,\n\nYou were far more interested in the wrapping paper than anything inside it. You crumpled it for twenty minutes and laughed every single time.\n\nThe best present this year was you." },
-    "letters/w3": { date: "2021-09-03", createdAt: 3, title: "the day you walked", env: "mint", stamp: { design: 15 }, photos: ["park.svg"],
+    "letters/w3": { date: "2021-09-03", createdAt: 3, title: "the day you walked", env: "mint", stamp: { design: 15 }, photos: ["firstwalk.webp"],
       body: "Dear Leo,\n\nFour wobbly steps across the grass in the park, then you sat down hard and looked at me like you'd just discovered a secret.\n\nYou didn't stop walking for the rest of the afternoon." },
-    "letters/w4": { date: "2023-05-12", createdAt: 4, title: "three candles", env: "bday", stamp: { design: 19, frame: "#e88aa8" }, photos: ["cake.svg", "balloons.svg"],
+    "letters/w4": { date: "2023-05-12", createdAt: 4, title: "three candles", env: "bday", stamp: { design: 19, frame: "#e88aa8" }, photos: ["birthday.webp", "birthday2.webp"],
       stickers: [{ key: "s2", x: .86, y: .74, w: .13, r: 14 }],
       body: "Dear Leo,\n\nYou asked for a blue cake with \"lots of candles\". When we sang, you blew so hard you missed every one of them, then clapped for yourself anyway.\n\nHappy third birthday, my favourite person." },
-    "letters/w5": { date: "2024-02-10", createdAt: 5, title: "your first ang bao", env: "cny", stamp: { design: 23, frame: "#c8423b" }, photos: ["lanterns.svg"],
+    "letters/w5": { date: "2024-02-10", createdAt: 5, title: "your first ang bao", env: "cny", stamp: { design: 23, frame: "#c8423b" }, photos: ["chinesenewyear.webp"],
       body: "Dear Leo,\n\nYou said \"gong xi fa cai\" to every single auntie at the reunion dinner and collected nine red packets. You put them all under your pillow \"so they can sleep too\"." },
-    "letters/w6": { date: "2025-01-06", createdAt: 6, title: "first day of school", env: "airmail", stamp: { design: 14, frame: "#2f55a8" }, photos: ["schoolbag.svg"], sign: "love, mama & papa",
+    "letters/w6": { date: "2025-01-06", createdAt: 6, title: "first day of school", env: "airmail", stamp: { design: 14, frame: "#2f55a8" }, photos: ["firstschool.webp"], sign: "love, mama & papa",
       body: "Dear Leo,\n\nYour new bag was nearly as big as you. You held my hand all the way to the gate, then let go without looking back.\n\nI cried in the car. Happy tears, mostly." },
-    "letters/w7": { date: "2026-07-20", createdAt: 7, title: "you learned to swim", env: "blue", stamp: { design: 2, frame: "#2f8f8f" }, photos: ["beach1.svg", "beach2.svg", "beach3.svg"],
+    "letters/w7": { date: "2026-07-20", createdAt: 7, title: "you learned to swim", env: "blue", stamp: { design: 2, frame: "#2f8f8f" }, photos: ["swim.webp"],
       stickers: [{ key: "s8", x: .84, y: .47, w: .13, r: -10 }],
       doodles: [{ c: "#d8553f", w: .009, p: [[0.165,0.71],[0.145,0.685],[0.16,0.665],[0.185,0.67],[0.2,0.685],[0.215,0.67],[0.24,0.665],[0.255,0.685],[0.235,0.71],[0.2,0.74],[0.165,0.71]] }],
       body: "Dear Leo,\n\nYou kicked so hard the whole pool got splashed, came up laughing with water up your nose, and shouted \"again!\"\n\nThen we built a sandcastle and the waves took it. You said the sea must have wanted a house too.\n\nI hope you always jump in like that." }
