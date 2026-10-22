@@ -4,7 +4,7 @@
 (function () {
   const KEY = "letters-demo-db-v1", MEDIA = "letters-demo-media-";
   const SEED = {
-    "meta/child": { name: "Leo", gender: "boy", birth: "2020-05-12", sign: "love, mama", handStyle: { size: 16, lh: 24, stroke: 0, width: 100, height: 100, spacing: 0, slant: 0 } },
+    "meta/child": { name: "Leo", gender: "boy", birth: "2020-05-12", sign: "love, mama" },
     "letters/w1": { date: "2020-05-20", createdAt: 1, title: "welcome, little one", env: "cream", stamp: { design: 4 }, photos: ["feet.svg"],
       body: "Dear Leo,\n\nYou are eight days old and you already sneeze like your grandpa. You fall asleep with one hand on my collarbone, as if you're checking I'm still here.\n\nI am. I always will be." },
     "letters/w2": { date: "2020-12-24", createdAt: 2, title: "your first christmas", env: "xmas", stamp: { design: 3, frame: "#c8423b" }, photos: ["tree.svg", "snow.svg"],
